@@ -4,7 +4,6 @@ const url = require('url');
 const GIFEncoder = require('gif-encoder'); // <--- NEW IMPORT
 const { PassThrough } = require('stream'); // <--- NEW IMPORT
 
-const PORT = 3000;
 
 // Parse query parameters and calculate time difference
 function getCountdown(targetDate) {
@@ -362,6 +361,8 @@ const server = http.createServer((req, res) => {
         res.end('Not Found');
     }
 });
+
+const PORT = process.env.PORT || 3000;
 
 server.listen(PORT, () => {
     console.log(`Countdown Server running at http://localhost:${PORT}/`);
