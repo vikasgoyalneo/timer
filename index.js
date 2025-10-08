@@ -111,7 +111,7 @@ function generateCountdownGif(targetDate, options = {}) {
     gif.setDelay(delay);
     gif.setRepeat(0);
     // You can try lowering quality further if memory issues persist
-    gif.setQuality(20); 
+    gif.setQuality(40); 
 
     // Start GIF encoding
     gif.writeHeader();
@@ -281,8 +281,8 @@ const server = http.createServer((req, res) => {
             const countdown = getCountdown(date);
             const options = {
                 title: title || 'Countdown',
-                width: parseInt(width) || 800,
-                height: parseInt(height) || 400,
+                width: parseInt(width) || 400,
+                height: parseInt(height) || 200,
                 bgColor: bgColor || '#1a1a2e',
                 textColor: textColor || '#eee',
                 accentColor: accentColor || '#0f3460'
@@ -314,13 +314,13 @@ const server = http.createServer((req, res) => {
 			try {
 				const options = {
 					title: title || 'Countdown',
-					width: parseInt(width) || 800,
-					height: parseInt(height) || 400,
+					width: parseInt(width) || 400,
+					height: parseInt(height) || 200,
 					bgColor: bgColor || '#1a1a2e',
 					textColor: textColor || '#eee',
 					accentColor: accentColor || '#0f3460',
 					// Use defaults that are less memory intensive
-					frames: parseInt(frames) || 5, 
+					frames: parseInt(frames) || 3, 
 					delay: parseInt(delay) || 1000
 				};
 
